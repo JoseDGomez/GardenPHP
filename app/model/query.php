@@ -15,3 +15,9 @@ function getTask()
    return $tareas;
 }
 
+function delTask($id)
+{
+   $bd = Db::getInstance();
+   $sql = ("DELETE FROM tarea " . "WHERE idTarea = '" . $id . "'");
+   $stmt = $bd->ejecutar($sql);
+}
