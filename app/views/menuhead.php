@@ -9,9 +9,11 @@
       <div class="sidebar-heading">Garden PHP </div>
       <div class="list-group list-group-flush">
         <a href="../controller/gettask.php" class="list-group-item list-group-item-action bg-light">Tareas</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Modificar tarea</a>
+        <?php if($_SESSION["tipo"]=="A"){?>
+        <a href="../controller/createtask.php" class="list-group-item list-group-item-action bg-light">Nueva tarea</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Usuarios</a>
+        <?php } ?>
         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
       </div>

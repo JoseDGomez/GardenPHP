@@ -9,7 +9,7 @@ function loginOK($name, $pass)
         $_SESSION['dentro'] = TRUE;
 
         $_SESSION['tipo'] = getTipo($name, $pass);
-
+        $_SESSION['nombre'] = $name;
         return TRUE;
     }
 
@@ -35,6 +35,7 @@ function queryLogin($name, $pass)
 
 function estaDentro()
 {
+    
     if ($_SESSION['dentro']) {
         return true;
     }

@@ -1,19 +1,15 @@
-<?php 
+<?php
+
 include_once "../model/query.php";
 include_once "../model/querylogin.php";
 
 if(estaDentro() == false){
     include_once "../controller/logincontrol.php";
-}
-
-
-else{
+}else{
     if(esAdmin()){
-        $tareas = getTask();
+        $provincia = getProvincias();
+        include_once "../views/formtarea.php";
     }else{
-        $tareas = getTaskOp();
-    }
-
-
-include_once "../views/tareas.php";
+    include_once "../controller/gettask.php";
+    } 
 }

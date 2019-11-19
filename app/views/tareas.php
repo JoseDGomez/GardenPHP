@@ -45,7 +45,8 @@
           <td><?php echo  $tarea["provincia"] ?></td>
           <td><?php echo $tarea["estado"] ?></td>
           <td><?php echo $tarea["fechaCreacion"] ?></td>
-          <td><a href="../controller/deletetask.php?id=<?php echo $id; ?>"><img title="Eliminar" src="../vendor/img/xbutton.png"></a></td>
+      <td><?php if($_SESSION["tipo"] == "A"){?><a href="../controller/deletetask.php?id=<?php echo $id; ?>"><img title="Eliminar" src="../vendor/img/xbutton.png"></a><?php } ?>&nbsp&nbsp&nbsp&nbsp
+              <a href="../controller/modtask.php?id=<?php echo $id; ?>"><img title="Editar" src="../vendor/img/edit.png"></a></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
