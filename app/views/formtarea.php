@@ -21,11 +21,26 @@
 <body>
 
     <?php include "menuhead.php" ?>
-    <form>
+    <form method="POST" action="../controller/createtask.php">
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Descripcion</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"></textarea>
         </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputOperario">Operario</label>
+            <select id="inputOperario" class="form-control" name="operario">
+                <option selected>Selecciona un operario</option>
+                <?php foreach ($operario as $value => $op) : ?>
+                    <?php echo "<option value=" . $op["nombre"] . ">" . $op["nombre"] . "</option>"; ?>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputemail">Correo</label>
+            <input type="text" class="form-control" id="inputemail" name="correo">
+        </div>            
+                </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Contacto</label>
@@ -62,15 +77,15 @@
         <div>
             <label>Estado</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <input class="form-check-input" type="radio"  id="inlineRadio1" value="P" name="estado">
                 <label class="form-check-label" for="inlineRadio1">Pendiente (P)</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <input class="form-check-input" type="radio"  id="inlineRadio2" value="R" name="estado">
                 <label class="form-check-label" for="inlineRadio2">Realizada (R)</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                <input class="form-check-input" type="radio"  id="inlineRadio3" value="C" name="estado">
                 <label class="form-check-label" for="inlineRadio3">Cancelada (C)</label>
             </div>
         </div>
@@ -94,7 +109,7 @@
                 <textarea class="form-control" id="textArea2" rows="6" name="anotacionPos"></textarea>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <input type="submit" class="btn btn-primary">Sign in</button><a>
     </form>
     <?php include "menufooter.php" ?>
 

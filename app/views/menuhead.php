@@ -11,8 +11,8 @@
         <a href="../controller/gettask.php" class="list-group-item list-group-item-action bg-light">Tareas</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Modificar tarea</a>
         <?php if($_SESSION["tipo"]=="A"){?>
-        <a href="../controller/createtask.php" class="list-group-item list-group-item-action bg-light">Nueva tarea</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Usuarios</a>
+        <a href="../controller/movecreate.php" class="list-group-item list-group-item-action bg-light">Nueva tarea</a>
+        <a href="../controller/userscontrol.php" class="list-group-item list-group-item-action bg-light">Usuarios</a>
         <?php } ?>
         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
@@ -36,16 +36,12 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Opciones
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Modificar datos</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../controller/logout.php">Cerrar sesión</a>
               </div>
