@@ -30,6 +30,7 @@ function queryLogin($name, $pass)
     } else {
 
         return true;
+        
     }
 }
 

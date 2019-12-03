@@ -40,7 +40,7 @@
                                 echo "Administrador";
                             } else
                                 echo "Operario";  ?></td>
-                    <td><a href="../controller/modtask.php?id=<?php echo $id; ?>"><img title="Editar" src="../vendor/img/edit.png"></a></td>
+                    <td><a href="../controller/deleteUser.php?id=<?php echo $id; ?>"><img title="Eliminar" src="../vendor/img/xbutton.png"></a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

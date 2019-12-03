@@ -1,13 +1,20 @@
 <?php 
 require_once "../model/querylogin.php";
 require_once "../model/query.php";
+include_once "../controller/validateadd.php";
 $datos = array();
 if(!estaDentro() || !esAdmin()){
    header ("Location: ../controller/logincontrol.php");
 }
 
 if($_POST){
-    
+   $errores=filter();
+   if($errores){
+      echo "hola";
+      foreach($errores as $valor)
+      echo $valor;
+      
+   }else{
     $datos["descripcion"]=$_POST["descripcion"];
     $datos["contacto"]=$_POST["contacto"];
     $datos["telefono"]=$_POST["telefono"];
@@ -22,10 +29,10 @@ if($_POST){
     $datos["anotacionAnt"]=$_POST["anotacionAnt"];
 
     addTask($datos);
-
+    include_once "../controller/gettask.php";
+   } 
     
-    
-   include_once "../controller/gettask.php";
+   include_once "../controller/movecreate.php";
  }
 else {
  

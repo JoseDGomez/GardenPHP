@@ -30,7 +30,7 @@
         <div class="form-group col-md-6">
             <label for="inputOperario">Operario</label>
             <select id="inputOperario" class="form-control" name="operario">
-                <option selected>Selecciona un operario</option>
+                <option selected value="0">Selecciona un operario</option>
                 <?php foreach ($operario as $value => $op) : ?>
                     <?php echo "<option value=" . $op["nombre"] . ">" . $op["nombre"] . "</option>"; ?>
                 <?php endforeach; ?>
@@ -63,7 +63,7 @@
             <div class="form-group col-md-4">
                 <label for="inputState">Provincia</label>
                 <select id="inputState" class="form-control" name="provincia">
-                    <option selected>Selecciona una provincia</option>
+                    <option selected value="0">Selecciona una provincia</option>
                     <?php foreach ($provincia as $value => $prov) : ?>
                         <?php echo "<option value=" . $prov["nombre"] . ">" . $prov["nombre"] . "</option>"; ?>
                     <?php endforeach; ?>
@@ -94,19 +94,11 @@
                 <label for="inputFechaC">Fecha de creación</label>
                 <input type="text" class="form-control" id="inputFechaC" placeholder="Fecha" name="fechaCreacion">
             </div>
-            <div class="form-group col-md-6">
-                <label for="inputFechaR">Fecha de realización</label>
-                <input type="text" class="form-control" id="inputFechaR" placeholder="Fecha" name="fechaRealizacion">
-            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="textarea1">Anotaciones anteriores</label>
                 <textarea class="form-control" id="textArea1" rows="6" name="anotacionAnt"></textarea>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="textArea2">Anotaciones posteriores</label>
-                <textarea class="form-control" id="textArea2" rows="6" name="anotacionPos"></textarea>
             </div>
         </div>
         <input type="submit" class="btn btn-primary">Sign in</button><a>

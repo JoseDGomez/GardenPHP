@@ -123,15 +123,49 @@ function showDetails($id)
    return $datos;
 }
 
-function updateTask($id)
+function updateTask($id, $datos)
 {
    $bd = Db::getInstance();
-   $sql = ("UPDATE ofertas " . "SET descripcion = '" . $_POST["desc"] . "'," . "contacto = '" . $_POST["cont"] . "'," .
-      "telefono = '" . $_POST["tlf"] . "'," . "correo = '" . $_POST["email"] . "'," .
-      "codPostal = '" . $_POST["cod"] . "'," . "direccion = '" . $_POST["dir"] . "'," .
-      "poblacion = '" . $_POST["pob"] . "'," . "provincia = '" . $_POST["prov"] . "'," .
-      "estado = '" . $_POST["estado"] . "'," . "FechaCreacion = '" . $_POST["fecha"] . "'," .
-      "FechaCom = '" . $_POST["fechac"] . "'," . "PsicologoEnc = '" . $_POST["psiq"] . "'," .
-      "CandidatoSelec = '" . $_POST["cand"] . "'," . "DatosCand = '" . $_POST["datos"] . "'" .
-      "WHERE idoferta = '" . $id . "'");
+   $sql = ("UPDATE tarea " . "SET descripcion = '" . $datos["descripcion"] . "'," . "personaCont = '" . $datos["contacto"] . "'," .
+      "telefono = '" . $datos["telefono"] . "'," . "correo = '" . $datos["correo"] . "'," .
+      "codPostal = '" . $datos["codPostal"] . "'," . "direccion = '" . $datos["direccion"] . "'," .
+      "poblacion = '" . $datos["poblacion"] . "'," . "provincia = '" . $datos["provincia"] . "'," .
+      "estado = '" . $datos["estado"] . "'," . "fechaCreacion = '" . $datos["fechaCreacion"] . "'," .
+      "fechaRealizacion = '" . $datos["fechaRealizacion"] . "'," . "anotacionAnt = '" . $datos["anotacionAnt"] . "'," .
+      "anotacionPos = '" . $datos["anotacionPos"] . "'," . "operario = '" . $datos["operario"] . "'" .
+      "WHERE idTarea = '" . $id . "'");
+      $stmt = $bd->ejecutar($sql);
+      
+
+  
+}
+
+function completeTask($id, $datos){
+   $bd = Db::getInstance();
+   $sql = ("UPDATE tarea " . "SET fechaRealizacion = '" . $datos["fechaRealizacion"] . "'," . "anotacionAnt = '" . $datos["anotacionAnt"] . "'," .
+      "estado = '" . $datos["estado"] .  "'" . "WHERE idTarea = '" . $id . "'");
+      $stmt = $bd->ejecutar($sql);
+}
+
+function updateUser($id, $datos){
+   $bd = Db::getInstance();
+   $sql = ("UPDATE usuario " . "SET nombre = '" . $datos["nombre"] . "'," . "pass = '" . $datos["pass"] . "'" . "WHERE idUsuario = '" . $id . "'");
+   $stmt = $bd->ejecutar($sql);
+}
+
+function getUserData($nombre){
+   $bd = Db::getInstance();
+   $sql = "SELECT * FROM usuario WHERE nombre = " . "'". $nombre ."'" ;
+   $datos = [];
+   $stmt = $bd->ejecutar($sql);
+   while ($x = $bd->obtener_fila($stmt, 0)) {
+      $datos[] = $x;
+   }
+   return $datos;
+}
+
+function deleteUser($id){
+   $bd = Db::getInstance();
+   $sql = ("DELETE FROM usuario " . "WHERE idUsuario = '" . $id . "'");
+   $stmt = $bd->ejecutar($sql);
 }

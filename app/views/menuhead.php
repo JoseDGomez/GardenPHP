@@ -14,7 +14,7 @@
         <a href="../controller/movecreate.php" class="list-group-item list-group-item-action bg-light">Nueva tarea</a>
         <a href="../controller/userscontrol.php" class="list-group-item list-group-item-action bg-light">Usuarios</a>
         <?php } ?>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+        <a href="../controller/profile.php?nombre=<?php echo $_SESSION["nombre"]?>" class="list-group-item list-group-item-action bg-light">Perfil</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
       </div>
     </div>
