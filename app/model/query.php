@@ -166,6 +166,6 @@ function getUserData($nombre){
 
 function deleteUser($id){
    $bd = Db::getInstance();
-   $sql = ("DELETE FROM usuario " . "WHERE idUsuario = '" . $id . "'");
+   $sql = ("DELETE FROM usuario " . "WHERE idUsuario = " . $id . ";");
    $stmt = $bd->ejecutar($sql);
 }

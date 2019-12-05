@@ -17,6 +17,7 @@ if(!estaDentro()){
            
             updateUser($id, $datos);
             $_SESSION["nombre"] = $datos["nombre"];
+            $_SESSION["pass"] = $datos["pass"];
             include_once "gettask.php";
           }
 

@@ -7,9 +7,10 @@ function loginOK($name, $pass)
 
     if (queryLogin($name, $pass)) {
         $_SESSION['dentro'] = TRUE;
-
+        $_SESSION["id"] = getID($name, $pass);
         $_SESSION['tipo'] = getTipo($name, $pass);
         $_SESSION['nombre'] = $name;
+        $_SESSION["pass"] = $pass;
         return TRUE;
     }
 
@@ -66,4 +67,15 @@ function getTipo($name, $pass)
 
     $datos = $stmt->fetch_assoc();
     return $datos['tipo'];
+}
+
+function getID($name, $pass)
+{
+    $bd = Db::getInstance();
+    $query = ("SELECT idUsuario from usuario WHERE nombre ='$name'AND pass ='$pass '");
+
+    $stmt = $bd->ejecutar($query);
+
+    $datos = $stmt->fetch_assoc();
+    return $datos['idUsuario'];
 }
