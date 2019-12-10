@@ -13,7 +13,7 @@ if($_POST){
       echo "hola";
       foreach($errores as $valor)
       echo $valor;
-      
+      include_once "../controller/movecreate.php";
    }else{
     $datos["descripcion"]=$_POST["descripcion"];
     $datos["contacto"]=$_POST["contacto"];
@@ -32,7 +32,7 @@ if($_POST){
     include_once "../controller/gettask.php";
    } 
     
-   include_once "../controller/movecreate.php";
+   
  }
 else {
  

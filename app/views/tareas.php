@@ -47,7 +47,7 @@
           <td><?php echo $tarea["fechaCreacion"] ?></td>
       <td><?php if($_SESSION["tipo"] == "A"){?><a href="../controller/confirmdeltask.php?id=<?php echo $id; ?>"><img title="Eliminar" src="../vendor/img/xbutton.png"></a><?php } ?>&nbsp&nbsp&nbsp&nbsp
               <a href="../controller/checkmodrol.php?id=<?php echo $id; ?>"><img title="Editar" src="../vendor/img/edit.png"></a>&nbsp&nbsp&nbsp&nbsp
-              <a href="../controller/viewTask.php?id=<?php echo $id; ?>"><img title="Ver" src="../vendor/img/loupe.png"></a></td>
+              </td>
         </tr>
       <?php endforeach; ?>
     </tbody>

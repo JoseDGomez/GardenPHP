@@ -142,7 +142,7 @@ function updateTask($id, $datos)
 
 function completeTask($id, $datos){
    $bd = Db::getInstance();
-   $sql = ("UPDATE tarea " . "SET fechaRealizacion = '" . $datos["fechaRealizacion"] . "'," . "anotacionAnt = '" . $datos["anotacionAnt"] . "'," .
+   $sql = ("UPDATE tarea " . "SET fechaRealizacion = '" . $datos["fechaRealizacion"] . "'," . "anotacionPos = '" . $datos["anotacionPos"] . "'," .
       "estado = '" . $datos["estado"] .  "'" . "WHERE idTarea = '" . $id . "'");
       $stmt = $bd->ejecutar($sql);
 }

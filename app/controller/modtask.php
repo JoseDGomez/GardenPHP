@@ -7,7 +7,7 @@ if(estaDentro() == false){
     include_once "../controller/logincontrol.php";
 }else{
     if(!esAdmin()){
-        include_once "../controller/gettask.php";
+        include_once "../views/completetask.php";
         
     }else{
         $provincia = getProvincias();

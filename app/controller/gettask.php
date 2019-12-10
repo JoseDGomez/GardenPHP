@@ -12,6 +12,7 @@ else{
         $tareas = getTask();
     }else{
         $tareas = getTaskOp();
+        
     }
 
 

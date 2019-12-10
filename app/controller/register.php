@@ -1,6 +1,7 @@
 <?php 
 include_once "../model/query.php";
 include_once "../model/querylogin.php";
+include_once "validateuser.php";
 $datos = array();
 if(!estaDentro() || !esAdmin()){
     include_once "logincontrol.php";
@@ -8,8 +9,13 @@ if(!estaDentro() || !esAdmin()){
 
 
     if($_POST){
-        
-        
+
+
+      $errores=filter();
+        if($errores){
+           foreach($errores as $valor)
+           echo $valor;
+        }
           if(!exists($_POST["nombre"])){
             $datos["nombre"]=$_POST["nombre"];
             $datos["pass"]=$_POST["pass"];
